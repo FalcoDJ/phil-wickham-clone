@@ -1,0 +1,284 @@
+:root {
+  --base-margin-x: 200px;
+  --content-max-width: 1000px;
+}
+
+html {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+  /* max-width: max-content; */
+}
+
+body {
+  background: url("../images/background1.jpg");
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  /* width: 100%; */
+}
+
+header {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2rem;
+
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  /* margin: 0 var(--base-margin-x); */
+}
+
+footer {
+  background: black;
+  padding: 1em;
+  color: white;
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  margin: 0;
+  white-space: nowrap;
+}
+
+p {
+  margin: 0.8em 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6em;
+  width: max-content;
+}
+
+img {
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+main a {
+  border: 1px solid rgba(0, 0, 0, 0.509);
+  padding: 0.8em 2em;
+  display: block;
+  margin-bottom: 0.4em;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+main a:hover {
+  background-color: rgba(0, 0, 0, 0.509);
+  color: white;
+}
+
+section {
+  position: relative;
+  z-index: inherit;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hero-section {
+  height: 100vh;
+}
+
+.section-wrapper {
+  /* box-sizing: border-box; */
+  height: 100%;
+  margin: auto;
+  display: flex;
+  max-width: var(--content-max-width);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-img {
+  width: 35em;
+  border: 1px solid black;
+}
+
+.hero-content {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+}
+
+.hero-content p {
+  text-align: center;
+  margin-top: 0;
+}
+
+.buy-section {
+  background: white;
+  height: 100vh;
+  padding: 10em 0;
+}
+
+.buy-section img {
+  max-width: 35vmax;
+}
+
+.concerts {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.concert-wrapper {
+  flex-direction: column;
+  margin: 15em auto;
+  background: white;
+  width: max-content;
+  padding: 2em;
+}
+
+.concert-wrapper h1:first-child {
+  margin-bottom: 1em;
+  font-size: 2.8rem;
+}
+
+.concernts-list ul li {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  align-items: center;
+}
+
+.concert-detail p {
+  margin: 0.8em 0;
+}
+
+.concert-detail p:first-child {
+  margin: 0;
+}
+
+.video {
+  height: 100vh;
+}
+
+.video-preview {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1200px) {
+  :root {
+    --margin-x: 100px;
+  }
+
+  .section-wrapper {
+    margin-left: var(--margin-x);
+    margin-right: var(--margin-x);
+    gap: 4em;
+  }
+
+  .section-wrapper img {
+    max-width: 35vmax;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --margin-x: 32px;
+    --margin-top: 96px;
+  }
+
+  header {
+    margin: auto;
+    top: 0;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  /* main {
+    margin-top: var(--margin-top);
+  } */
+
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-wrapper {
+    padding: 1em;
+    flex-direction: column;
+    justify-content: start;
+    margin: auto;
+  }
+
+  .hero-section .section-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .section-wrapper img {
+    width: 80%;
+    max-width: 100%;
+  }
+
+  .buy-section {
+    padding: 0;
+    margin: 0;
+  }
+
+  .section-wrapper {
+    height: max-content;
+    margin: 0;
+  }
+
+  .concerts {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .concert-wrapper {
+    display: block;
+    padding: 1em;
+    width: 80%;
+    height: min-content;
+  }
+
+  .concert-wrapper h1:first-child {
+    text-align: center;
+  }
+}
